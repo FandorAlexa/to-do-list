@@ -84,22 +84,26 @@ class MakeToDo
 
   def edit
     puts "Would you like to View your list or Add, Remove, Update, or Complete an item?"
-    response = gets.chomp.downcase
 
-    case response
-    when 'view'
-      view
-    when 'add'
-      add
-    when 'remove'
-      remove
-    when 'update'
-      update
-    when'complete'
-      complete
-    else
-      puts "I'm sorry, valid entries are: View, Add, Remove, Update, or Complete."
+    loop do
+      response = gets.chomp.downcase
+
+      case response
+      when 'view'
+        view
+      when 'add'
+        add
+      when 'remove'
+        remove
+      when 'update'
+        update
+      when'complete'
+        complete
+      else
+        puts "I'm sorry, valid entries are: View, Add, Remove, Update, or Complete."
+      end
     end
+    puts "What would you like to do now?"
   end
 end
 my_list = MakeToDo.new.edit
