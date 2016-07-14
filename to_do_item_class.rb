@@ -1,12 +1,9 @@
 class Item
 #items will know their name and if they are complete
-  def initialize(name, status = false)
+attr_reader :name, :status
+  def initialize(name)
     @name = name
-    @status = status
-  end
-
-  def re_name(new_name)
-    @name = new_name
+    @status = false
   end
 
   def status

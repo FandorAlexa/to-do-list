@@ -1,24 +1,29 @@
 require_relative 'to_do_item_class.rb'
+
 class List
+  attr_reader :name
   #lists know their item names how to view, add, remove, or complete
   def initialize(name = "New ToDo List")
     @name = name
-    @list = Hash.new{}
+    @list = Hash.new
+  end
+  def [](name)
+    @list[name]
   end
 
-  def view()
-    #Put code here
+  def view_list
+    @list.each{|k| puts " #{k}"}
   end
 
-  def add(item)
-    @list[item.name] = item
+  def add_item(item)
+    @list[item] = item
   end
 
-  def remove()
-    #Put code here
+  def update_item(item)
+    @list[item] = item
   end
 
-  def complete()
-    #Put code here
+  def complete_item(item)
+			@list[item].status
   end
 end
